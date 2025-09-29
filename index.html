@@ -2,49 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="format-detection" content="telephone=no" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    
-    <!-- Google Site Verification -->
     <meta name="google-site-verification" content="x-_lnOAbJKQXondrgvfYqjdU-Zel22mGqp-aE62YdGI" />
     
-    <!-- SEO Meta Tags (Google-safe) -->
-    <title>Blue Pay – Rewards Platform for Nigerian Users</title>
-    <meta name="description" content="Blue Pay offers engagement-based rewards, weekly withdrawal options, and promotional codes for verified Nigerian users. Official support available 22/7.">
-    <meta name="keywords" content="Blue Pay, Blue Pay Nigeria, reward platform, promo code, weekly withdrawal, Nigerian rewards, vendor support">
+    <title>Blue Pay Nigeria – Official Platform</title>
+    <meta name="description" content="Blue Pay Nigeria offers engagement-based rewards, weekly withdrawal options, and vendor-supported promo codes. Contact support 22/7.">
 
-    <!-- Fonts & Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     
     <style>
-        :root {
-            --blue-primary: #1a73e8;
-            --blue-dark: #0d47a1;
-            --blue-gradient: linear-gradient(135deg, #1a73e8, #0d47a1);
-            --white: #ffffff;
-            --light-bg: #f8fafc;
-            --text: #1e293b;
-            --gray: #64748b;
-            --border: #e2e8f0;
-            --success: #10b981;
-            --warning: #f59e0b;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
         body {
-            background-color: var(--light-bg);
-            color: var(--text);
+            background-color: #f9fbfd;
+            color: #2d3748;
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
         .container {
@@ -54,9 +32,10 @@
             padding: 0 20px;
         }
 
+        /* Header */
         header {
-            background: var(--white);
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -74,37 +53,34 @@
             align-items: center;
             gap: 12px;
             text-decoration: none;
+            color: #1a73e8;
+            font-weight: 700;
+            font-size: 1.6rem;
         }
 
         .logo-icon {
-            width: 42px;
-            height: 42px;
-            border-radius: 12px;
-            background: var(--blue-gradient);
+            width: 38px;
+            height: 38px;
+            background: linear-gradient(135deg, #1a73e8, #0d47a1);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .logo-text {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            font-size: 1.8rem;
-            color: var(--blue-primary);
+            font-size: 1.1rem;
         }
 
         .menu-toggle {
             background: none;
             border: none;
-            font-size: 1.6rem;
-            color: var(--blue-primary);
+            font-size: 1.8rem;
+            color: #1a73e8;
             cursor: pointer;
             display: block;
         }
 
+        /* Mobile Menu */
         .mobile-menu {
             position: fixed;
             top: 0;
@@ -125,19 +101,15 @@
         .mobile-menu a {
             display: block;
             padding: 16px 30px;
-            color: var(--text);
+            color: #2d3748;
             text-decoration: none;
-            font-weight: 600;
-            border-bottom: 1px solid var(--border);
-            transition: background 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 14px;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #edf2f7;
         }
 
         .mobile-menu a:hover {
-            background: #f1f5f9;
-            color: var(--blue-primary);
+            background: #f8fafc;
+            color: #1a73e8;
         }
 
         .overlay {
@@ -158,47 +130,47 @@
             visibility: visible;
         }
 
+        /* Hero */
         .hero {
-            background: var(--blue-gradient);
+            background: linear-gradient(135deg, #1a73e8, #0d47a1);
             color: white;
-            padding: 90px 0;
+            padding: 70px 0;
             text-align: center;
         }
 
         .hero h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.4rem;
+            font-size: 2.2rem;
             margin-bottom: 16px;
-            line-height: 1.3;
         }
 
         .hero p {
             font-size: 1.15rem;
-            max-width: 650px;
-            margin: 0 auto 28px;
+            max-width: 600px;
+            margin: 0 auto 24px;
             opacity: 0.95;
         }
 
         .btn {
             display: inline-block;
             background: white;
-            color: var(--blue-primary);
+            color: #1a73e8;
             padding: 14px 36px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
             font-size: 1.1rem;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.2s;
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
         }
 
+        /* Sections */
         .section {
-            padding: 80px 0;
+            padding: 70px 0;
         }
 
         .section-title {
@@ -207,21 +179,21 @@
         }
 
         .section-title h2 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.2rem;
-            color: var(--blue-primary);
-            margin-bottom: 10px;
+            font-size: 1.9rem;
+            color: #1a73e8;
+            margin-bottom: 12px;
         }
 
         .section-title p.subtitle {
-            color: var(--gray);
+            color: #718096;
             max-width: 600px;
             margin: 0 auto;
         }
 
+        /* Cards */
         .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 24px;
             max-width: 900px;
             margin: 0 auto;
@@ -229,65 +201,50 @@
 
         .card {
             background: white;
-            border-radius: 16px;
+            border-radius: 14px;
             padding: 28px 20px;
             text-align: center;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.06);
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
         }
 
         .card i {
             font-size: 2rem;
-            color: var(--blue-primary);
+            color: #1a73e8;
             margin-bottom: 16px;
         }
 
         .card h3 {
             font-size: 1.35rem;
             margin: 12px 0 10px;
-            color: var(--blue-primary);
+            color: #1a73e8;
         }
 
-        .support-content {
-            max-width: 750px;
-            margin: 0 auto;
-            background: white;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.07);
-        }
-
-        .alert-box {
-            background: #f0f9ff;
-            border-left: 4px solid var(--blue-primary);
-            padding: 18px;
-            border-radius: 8px;
-            margin-top: 18px;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        .alert-box strong {
-            color: var(--blue-dark);
-        }
-
+        /* Image Styling */
         .section-image {
             width: 100%;
             max-width: 550px;
-            border-radius: 16px;
-            margin: 28px auto;
+            border-radius: 14px;
+            margin: 30px auto;
             display: block;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-            border: 1px solid var(--border);
-            object-fit: cover;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
         }
 
+        /* Alert Box */
+        .alert-box {
+            background: #f0f9ff;
+            border-left: 4px solid #1a73e8;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px auto;
+            max-width: 700px;
+            font-size: 1.02rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
         footer {
-            background: var(--blue-dark);
+            background: #0d47a1;
             color: white;
             padding: 50px 0 25px;
         }
@@ -295,24 +252,13 @@
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 28px;
+            gap: 30px;
             margin-bottom: 25px;
         }
 
         .footer-col h3 {
             margin-bottom: 18px;
-            position: relative;
-            padding-bottom: 6px;
-        }
-
-        .footer-col h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 35px;
-            height: 3px;
-            background: var(--blue-primary);
+            font-size: 1.3rem;
         }
 
         .footer-links {
@@ -326,7 +272,7 @@
         .footer-links a {
             color: #cbd5e1;
             text-decoration: none;
-            transition: color 0.2s;
+            font-size: 1rem;
         }
 
         .footer-links a:hover {
@@ -338,15 +284,12 @@
             padding-top: 20px;
             border-top: 1px solid rgba(255,255,255,0.1);
             color: #94a3b8;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .hero p { font-size: 1.05rem; }
-            .section { padding: 60px 0; }
-            .section-title h2 { font-size: 1.9rem; }
-            .section-image { max-width: 100%; }
+            .hero h1 { font-size: 1.8rem; }
+            .section-title h2 { font-size: 1.6rem; }
         }
     </style>
 </head>
@@ -356,7 +299,7 @@
         <div class="container header-inner">
             <a href="#" class="logo">
                 <div class="logo-icon">B</div>
-                <div class="logo-text">Blue Pay</div>
+                Blue Pay
             </a>
             <button class="menu-toggle" id="menuToggle">
                 <i class="fas fa-bars"></i>
@@ -364,22 +307,27 @@
         </div>
     </header>
 
+    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
-        <a href="#how-it-works"><i class="fas fa-info-circle"></i> How It Works</a>
-        <a href="#rewards"><i class="fas fa-gift"></i> Rewards</a>
-        <a href="#withdrawal"><i class="fas fa-wallet"></i> Withdrawal</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
         <a href="#support"><i class="fas fa-headset"></i> Support</a>
+        <a href="#withdraw"><i class="fas fa-wallet"></i> Withdraw</a>
+        <a href="#how-it-works"><i class="fas fa-info-circle"></i> How It Works</a>
     </div>
     <div class="overlay" id="overlay"></div>
 
-    <section class="hero" id="home">
+    <!-- Hero -->
+    <section class="hero">
         <div class="container">
-            <h1>Welcome to Blue Pay</h1>
+            <h1>Blue Pay Nigeria</h1>
             <p>A rewards platform for Nigerian users. Participate, stay active, and access weekly opportunities.</p>
-            <a href="https://whatsapp.com/channel/0029Vb79XEC9sBI5NLOEoN0a" target="_blank" class="btn">Join Official Channel</a>
+            <a href="https://whatsapp.com/channel/0029Vb79XEC9sBI5NLOEoN0a" target="_blank" class="btn">
+                Join Official Channel
+            </a>
         </div>
     </section>
 
+    <!-- How It Works -->
     <section class="section" id="how-it-works">
         <div class="container">
             <div class="section-title">
@@ -388,84 +336,82 @@
             </div>
             <div class="cards">
                 <div class="card">
-                    <i class="fas fa-user-plus"></i>
+                    <i class="fas fa-comments"></i>
                     <h3>1. Join Channel</h3>
-                    <p>Join our official WhatsApp or Telegram channel for instructions.</p>
+                    <p>Join our official WhatsApp or Telegram channel.</p>
                 </div>
                 <div class="card">
-                    <i class="fas fa-handshake"></i>
+                    <i class="fas fa-user-tie"></i>
                     <h3>2. Contact Vendor</h3>
-                    <p>Speak with an official vendor to get your Blue Pay Code (BPC).</p>
+                    <p>Get your Blue Pay Code (BPC) from an official vendor.</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-tasks"></i>
                     <h3>3. Stay Active</h3>
-                    <p>Complete daily engagements to qualify for rewards and draws.</p>
+                    <p>Complete daily tasks to qualify for rewards.</p>
                 </div>
             </div>
-            <!-- Working Vendor Image -->
-            <img src="https://cdn.pixabay.com/photo/2022/05/12/15/52/business-7191955_1280.jpg" 
-                 alt="Official Blue Pay vendor assisting a customer in Nigeria" 
+            <img src="https://cdn.pixabay.com/photo/2023/05/02/12/32/meeting-7965816_1280.jpg" 
+                 alt="Blue Pay vendor meeting with customer in Nigeria" 
                  class="section-image">
         </div>
     </section>
 
-    <section class="section" id="rewards">
+    <!-- Rewards -->
+    <section class="section" style="background: #fff;">
         <div class="container">
             <div class="section-title">
-                <h2>Rewards & Promotions</h2>
-                <p class="subtitle">Earn through consistent participation</p>
+                <h2>Rewards & Code Policy</h2>
             </div>
-            <div class="support-content">
-                <p>Users may receive a Blue Pay Code (BPC) from verified vendors via the official app.</p>
-                <div class="alert-box">
-                    <strong>Code Validity:</strong> Each BPC is valid for <strong>1 month</strong>. 
-                    A new code can be obtained after the current one expires.
-                </div>
-                <p>Active participants also get chances to win prizes through weekly engagement activities.</p>
+            <div class="alert-box">
+                <strong>Blue Pay Code (BPC) Validity:</strong> Each code is valid for <strong>1 month</strong>. 
+                A new code may be obtained after expiry from an official vendor.
             </div>
-            <!-- Working Business Team Image -->
-            <img src="https://cdn.pixabay.com/photo/2023/05/02/12/32/meeting-7965816_1280.jpg" 
-                 alt="Professional Nigerian business team discussing digital rewards" 
+            <img src="https://cdn.pixabay.com/photo/2021/09/15/12/18/smartphone-6626384_1280.jpg" 
+                 alt="Nigerian user checking Blue Pay rewards on mobile" 
                  class="section-image">
         </div>
     </section>
 
-    <section class="section" id="withdrawal">
+    <!-- Withdrawal -->
+    <section class="section" id="withdraw">
         <div class="container">
             <div class="section-title">
                 <h2>Withdrawal Policy</h2>
-                <p class="subtitle">Transparent and structured process</p>
             </div>
-            <div class="support-content">
-                <p>Eligible users may request weekly withdrawals based on activity and verification status.</p>
-                <div class="alert-box">
-                    <strong>Weekly Limit:</strong> Up to <strong>₦10,000 per week</strong> may be withdrawn, 
-                    subject to platform rules and processing timelines (2–5 business days).
-                </div>
-                <p>All requests must be submitted through official channels. Only verified vendors can assist with account issues.</p>
+            <div class="alert-box">
+                <strong>Weekly Limit:</strong> Eligible users may withdraw up to <strong>₦10,000 per week</strong>. 
+                Processing takes 2–5 business days. Requests must be submitted through official channels.
             </div>
-            <!-- Working Mobile Transaction Image -->
-            <img src="https://cdn.pixabay.com/photo/2021/09/15/12/18/smartphone-6626384_1280.jpg" 
-                 alt="Nigerian user making a secure mobile transaction with Blue Pay" 
-                 class="section-image">
         </div>
     </section>
 
-    <section class="section" id="support">
+    <!-- Support -->
+    <section class="section" id="support" style="background: #fff;">
         <div class="container">
             <div class="section-title">
                 <h2>Support</h2>
                 <p class="subtitle">We’re here to help</p>
             </div>
-            <div class="support-content">
-                <p>Our support team is available <strong>22 hours a day, 7 days a week</strong>.</p>
-                <p>For assistance, contact us directly at: <strong>bluepay863@gmail.com</strong></p>
-                <p>Please allow up to 24 hours for a response during peak times.</p>
+            <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <p>Our team is available <strong>22 hours a day, 7 days a week</strong>.</p>
+                <p><strong>Contact:</strong> <a href="mailto:bluepay863@gmail.com" style="color: #1a73e8; text-decoration: underline;">bluepay863@gmail.com</a></p>
             </div>
+            <img src="https://cdn.pixabay.com/photo/2022/05/12/15/52/business-7191955_1280.jpg" 
+                 alt="Blue Pay customer support team assisting users" 
+                 class="section-image">
         </div>
     </section>
 
+    <!-- Contact -->
+    <section class="section" id="contact" style="background: #f0f9ff; text-align: center;">
+        <div class="container">
+            <h3>Need Help?</h3>
+            <p>Email us anytime at <strong>bluepay863@gmail.com</strong></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -476,10 +422,10 @@
                 <div class="footer-col">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
                         <li><a href="#how-it-works">How It Works</a></li>
-                        <li><a href="#rewards">Rewards</a></li>
-                        <li><a href="#withdrawal">Withdrawal</a></li>
+                        <li><a href="#withdraw">Withdraw</a></li>
+                        <li><a href="#support">Support</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -491,7 +437,7 @@
                 </div>
             </div>
             <div class="copyright">
-                &copy; 2024 Blue Pay. All rights reserved.
+                &copy; 2024 Blue Pay Nigeria. All rights reserved.
             </div>
         </div>
     </footer>
@@ -511,18 +457,11 @@
             overlay.classList.remove('active');
         });
 
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
+        // Close menu when clicking a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
                 mobileMenu.classList.remove('open');
                 overlay.classList.remove('active');
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
             });
         });
     </script>
