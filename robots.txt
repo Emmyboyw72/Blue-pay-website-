@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://emmyboyw72.github.io/Blue-pay-website-/sitemap.xml
