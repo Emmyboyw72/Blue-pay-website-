@@ -1,178 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <title>BluePay - Secure Financial Platform</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    
+    <title>BluePay – Get ₦50,000 Instant Bonus in Nigeria</title>
+    <meta name="description" content="Join BluePay today and receive ₦50,000 instantly! Fast, secure rewards for Nigerians." />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    
     <style>
         :root {
             --blue-primary: #1a73e8;
             --blue-dark: #0d47a1;
-            --blue-light: #e8f0fe;
+            --blue-gradient: linear-gradient(135deg, #1a73e8, #0d47a1);
             --white: #ffffff;
-            --text-gray: #2d2d2d;
-            --border-gray: #e0e6ed;
-            --bg-light: #fafbff;
-            --green-seen: #07bc0c;
-            --gray-light: #f5f7fa;
-            --gray-medium: #e4e7eb;
-            --success: #4caf50;
-            --warning: #ff9800;
-            --info: #2196f3;
+            --light-bg: #f8fafc;
+            --text: #1e293b;
+            --gray: #64748b;
+            --border: #e2e8f0;
+            --success: #10b981;
+            --warning: #f59e0b;
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
-            background-color: var(--white);
-            color: var(--text-gray);
+            background-color: var(--light-bg);
+            color: var(--text);
             line-height: 1.6;
-            touch-action: manipulation;
-            -webkit-text-size-adjust: 100%;
-            -ms-text-size-adjust: 100%;
+            overflow-x: hidden;
         }
 
         .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* Header Styles */
+        /* Header */
         header {
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: var(--white);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
-        .header-container {
+        .header-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 16px 0;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            text-decoration: none;
         }
 
         .logo-icon {
-            background: linear-gradient(135deg, var(--blue-primary), var(--blue-dark));
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: var(--blue-gradient);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 20px;
             font-weight: bold;
+            font-size: 1.2rem;
         }
 
         .logo-text {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
             font-size: 1.8rem;
             color: var(--blue-primary);
         }
 
-        .nav-links {
-            display: flex;
-            gap: 25px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-gray);
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--blue-primary);
-        }
-
-        .mobile-menu-btn {
-            display: none;
+        .menu-toggle {
             background: none;
             border: none;
-            font-size: 24px;
+            font-size: 1.6rem;
             color: var(--blue-primary);
             cursor: pointer;
+            display: block;
         }
 
-        /* Hero Section */
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 280px;
+            height: 100vh;
+            background: white;
+            box-shadow: -4px 0 20px rgba(0,0,0,0.1);
+            z-index: 2000;
+            transition: right 0.3s ease;
+            padding: 80px 0 30px;
+        }
+
+        .mobile-menu.open {
+            right: 0;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 16px 30px;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border);
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .mobile-menu a:hover {
+            background: #f1f5f9;
+            color: var(--blue-primary);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            z-index: 1500;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Hero */
         .hero {
-            background: linear-gradient(135deg, var(--blue-primary) 0%, var(--blue-dark) 100%);
+            background: var(--blue-gradient);
             color: white;
-            padding: 80px 0;
+            padding: 90px 0;
             text-align: center;
         }
 
-        .hero-content {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
         .hero h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 3.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
             margin-bottom: 20px;
             line-height: 1.2;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
+            font-size: 1.25rem;
+            max-width: 650px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
         }
 
         .highlight {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-weight: 600;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-weight: 700;
         }
 
         .btn {
             display: inline-block;
             background: white;
             color: var(--blue-primary);
-            padding: 14px 32px;
+            padding: 16px 40px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            border: 2px solid white;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            font-weight: 700;
+            font-size: 1.15rem;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
         }
 
-        /* Features Section */
-        .features {
-            padding: 80px 0;
-            background-color: var(--white);
+        /* Section Styling */
+        .section {
+            padding: 90px 0;
         }
 
         .section-title {
@@ -181,250 +212,112 @@
         }
 
         .section-title h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 2.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.4rem;
             color: var(--blue-primary);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
-        .section-title p {
-            color: #666;
+        .section-title p.subtitle {
+            color: var(--gray);
             max-width: 600px;
             margin: 0 auto;
         }
 
-        .features-grid {
+        /* Cards */
+        .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-card {
-            background: var(--white);
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid var(--border-gray);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--blue-light);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            color: var(--blue-primary);
-            font-size: 24px;
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--blue-primary);
-        }
-
-        .feature-card p {
-            color: #555;
-        }
-
-        /* Stats Section */
-        .stats {
-            padding: 60px 0;
-            background: var(--blue-light);
-            text-align: center;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-
-        .stat-item {
-            padding: 20px;
-        }
-
-        .stat-number {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 2.5rem;
-            color: var(--blue-primary);
-            margin-bottom: 10px;
-        }
-
-        .stat-label {
-            font-size: 1.1rem;
-            color: var(--text-gray);
-        }
-
-        /* About Section */
-        .about {
-            padding: 80px 0;
-            background-color: var(--white);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 2.5rem;
-            color: var(--blue-primary);
-            margin-bottom: 25px;
-        }
-
-        .about-text p {
-            margin-bottom: 20px;
-            color: #555;
-        }
-
-        .about-list {
-            list-style: none;
-            margin: 25px 0;
-        }
-
-        .about-list li {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 15px;
-            gap: 12px;
-        }
-
-        .about-list i {
-            color: var(--success);
-            font-size: 18px;
-            margin-top: 4px;
-        }
-
-        .about-image {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Withdrawal Section */
-        .withdrawal {
-            padding: 80px 0;
-            background: var(--gray-light);
-        }
-
-        .withdrawal-content {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            max-width: 800px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
-        .withdrawal h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 2.2rem;
-            color: var(--blue-primary);
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px 24px;
             text-align: center;
-            margin-bottom: 30px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+            transition: transform 0.3s;
         }
 
-        .withdrawal-steps {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
+        .card:hover {
+            transform: translateY(-6px);
         }
 
-        .step {
-            display: flex;
-            gap: 20px;
+        .card i {
+            font-size: 2.1rem;
+            color: var(--blue-primary);
+            margin-bottom: 18px;
         }
 
-        .step-number {
-            flex-shrink: 0;
-            width: 40px;
-            height: 40px;
-            background: var(--blue-primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .step-content h3 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
+        .card h3 {
+            font-size: 1.45rem;
+            margin: 14px 0 12px;
             color: var(--blue-primary);
         }
 
-        .step-content p {
-            color: #555;
+        /* Support Section */
+        .support-content {
+            max-width: 750px;
+            margin: 0 auto;
+            background: white;
+            padding: 32px;
+            border-radius: 18px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
         }
 
-        .guarantee {
-            background: rgba(76, 175, 80, 0.1);
-            border-left: 4px solid var(--success);
+        .alert-box {
+            background: #fffbeb;
+            border-left: 4px solid var(--warning);
             padding: 20px;
-            margin-top: 30px;
-            border-radius: 0 10px 10px 0;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 1.02rem;
+            line-height: 1.7;
         }
 
-        .guarantee h3 {
-            color: var(--success);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .alert-box strong {
+            color: var(--blue-dark);
+        }
+
+        /* Image Styling */
+        .section-image {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 16px;
+            margin: 30px auto;
+            display: block;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
         }
 
         /* Footer */
         footer {
             background: var(--blue-dark);
             color: white;
-            padding: 50px 0 20px;
+            padding: 60px 0 30px;
         }
 
-        .footer-content {
+        .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 30px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
-        .footer-column h3 {
-            font-size: 1.4rem;
+        .footer-col h3 {
             margin-bottom: 20px;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 8px;
         }
 
-        .footer-column h3::after {
+        .footer-col h3::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 50px;
+            width: 40px;
             height: 3px;
             background: var(--blue-primary);
         }
@@ -438,9 +331,9 @@
         }
 
         .footer-links a {
-            color: #ddd;
+            color: #cbd5e1;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: color 0.2s;
         }
 
         .footer-links a:hover {
@@ -449,210 +342,34 @@
 
         .copyright {
             text-align: center;
-            padding-top: 20px;
+            padding-top: 24px;
             border-top: 1px solid rgba(255,255,255,0.1);
-            color: #aaa;
-            font-size: 0.9rem;
+            color: #94a3b8;
+            font-size: 0.95rem;
         }
 
-        /* Mobile Menu */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: -300px;
-            width: 280px;
-            height: 100vh;
-            background: white;
-            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-            padding: 20px;
-            transition: right 0.3s;
-            z-index: 1000;
-        }
-
-        .mobile-menu.active {
-            right: 0;
-        }
-
-        .close-menu {
-            background: none;
-            border: none;
-            font-size: 24px;
-            color: var(--blue-primary);
-            float: right;
-            cursor: pointer;
-        }
-
-        .mobile-nav-links {
-            margin-top: 50px;
-        }
-
-        .mobile-nav-links a {
-            display: block;
-            padding: 15px 0;
-            text-decoration: none;
-            color: var(--text-gray);
-            font-weight: 600;
-            border-bottom: 1px solid var(--border-gray);
-        }
-
-        /* Beautiful Alert Modal */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.6);
-            display: none; /* Hidden by default */
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-
-        .modal {
-            background: white;
-            padding: 30px;
-            border-radius: 16px;
-            max-width: 450px;
-            width: 90%;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .modal h2 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--blue-primary);
-            margin-bottom: 20px;
-        }
-
-        .modal p {
-            margin-bottom: 25px;
-            color: #555;
-        }
-
-        .modal-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-        }
-
-        .modal-btn {
-            padding: 12px 24px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            color: white;
-            display: inline-block;
-            transition: transform 0.2s;
-        }
-
-        .modal-btn.whatsapp {
-            background: #25D366;
-        }
-
-        .modal-btn.telegram {
-            background: #0088cc;
-        }
-
-        .modal-btn:hover {
-            transform: translateY(-2px);
-        }
-
-        .close-modal {
-            margin-top: 20px;
-            color: #888;
-            font-size: 0.9rem;
-            cursor: pointer;
-            text-decoration: underline;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-        }
-
+        /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            .mobile-menu-btn {
-                display: block;
-            }
-            .hero {
-                padding: 60px 0;
-            }
-            .hero h1 {
-                font-size: 2.3rem;
-            }
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            .feature-card {
-                padding: 25px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .btn {
-                padding: 12px 24px;
-                font-size: 1rem;
-            }
-            .step {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .step-number {
-                align-self: flex-start;
-            }
-            .modal-buttons {
-                flex-direction: column;
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.1rem; }
+            .section { padding: 70px 0; }
+            .section-title h2 { font-size: 2rem; }
+            .mobile-menu {
+                width: 260px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Beautiful Alert Modal (Hidden by default) -->
-    <div class="modal-overlay" id="joinModal">
-        <div class="modal">
-            <h2>Join BluePay Community</h2>
-            <p>To get your ₦50,000 welcome bonus, please join us on WhatsApp or Telegram:</p>
-            <div class="modal-buttons">
-                <a href="https://whatsapp.com/channel/0029Vb79XEC9sBI5NLOEoN0a" target="_blank" class="modal-btn whatsapp">
-                    <i class="fab fa-whatsapp"></i> WhatsApp Channel
-                </a>
-                                <a href="https://t.me/boost/bluepayme" target="_blank" class="modal-btn telegram">
-                    <i class="fab fa-telegram"></i> Telegram Group
-                </a>
-            </div>
-            <div class="close-modal" onclick="document.getElementById('joinModal').style.display='none'">
-                Close and continue browsing
-            </div>
-        </div>
-    </div>
 
     <!-- Header -->
     <header>
-        <div class="container header-container">
-            <div class="logo">
+        <div class="container header-inner">
+            <a href="#" class="logo">
                 <div class="logo-icon">B</div>
                 <div class="logo-text">BluePay</div>
-            </div>
-            <nav class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#features">Features</a>
-                <a href="#withdrawal">Withdrawal</a>
-                <a href="#contact">Contact</a>
-            </nav>
-            <button class="mobile-menu-btn" id="menuBtn">
+            </a>
+            <button class="menu-toggle" id="menuToggle">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
@@ -660,202 +377,200 @@
 
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
-        <button class="close-menu" id="closeMenu">
-            <i class="fas fa-times"></i>
-        </button>
-        <div class="mobile-nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#features">Features</a>
-            <a href="#withdrawal">Withdrawal</a>
-            <a href="#contact">Contact</a>
-        </div>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+        <a href="#support"><i class="fas fa-headset"></i> Support</a>
+        <a href="#online-services"><i class="fas fa-cloud"></i> Online Services</a>
+        <a href="#withdraw"><i class="fas fa-wallet"></i> Withdraw</a>
     </div>
+    <div class="overlay" id="overlay"></div>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero" id="home">
-        <div class="container hero-content">
-            <h1>Start Earning with BluePay Today</h1>
-            <p>Sign up now and receive <span class="highlight">₦50,000</span> instantly! Join our community of <span class="highlight">2 million users</span> and experience secure, reliable financial services.</p>
-            <a href="#" class="btn" id="signupBtn">Sign Up Now</a>
+        <div class="container">
+            <h1>Earn ₦50,000 Instantly with BluePay</h1>
+            <p>Join thousands of Nigerians receiving fast, secure rewards. No delays. No stress.</p>
+            <a href="https://whatsapp.com/channel/0029Vb79XEC9sBI5NLOEoN0a" target="_blank" class="btn">Join Us</a>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
+    <!-- How It Works -->
+    <section class="section" id="how-it-works">
         <div class="container">
             <div class="section-title">
-                <h2>Why Choose BluePay?</h2>
-                <p>Our platform offers unique benefits designed to maximize your earnings and ensure security</p>
+                <h2>How It Works</h2>
+                <p class="subtitle">Start earning in 3 simple steps</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-gift"></i>
-                    </div>
-                    <h3>₦50,000 Welcome Bonus</h3>
-                    <p>Get ₦50,000 instantly when you sign up and verify your account. No hidden terms or conditions.</p>
+            <div class="cards">
+                <div class="card">
+                    <i class="fas fa-user-plus"></i>
+                    <h3>1. Join</h3>
+                    <p>Tap “Join Us” and follow the WhatsApp channel.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Secure Withdrawals</h3>
-                    <p>Withdraw funds with confidence through our AI-powered system or vendor-assisted process. No scams, guaranteed.</p>
+                <div class="card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>2. Verify</h3>
+                    <p>Complete your profile to unlock your bonus.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h3>Daily Login Rewards</h3>
-                    <p>Log in daily for 2 weeks straight and win ₦2,000! Consistency pays off with BluePay.</p>
+                <div class="card">
+                    <i class="fas fa-gift"></i>
+                    <h3>3. Earn</h3>
+                    <p>Get ₦50,000 instantly + daily rewards!</p>
+                </div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Team collaborating" class="section-image">
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p class="subtitle">Reach out anytime — we’re here to help</p>
+            </div>
+            <div class="support-content">
+                <p>Email us directly at: <strong>bluepay863@gmail.com</strong></p>
+                <p>Or message us via our official channels:</p>
+                <ul style="padding-left: 20px; margin-top: 12px;">
+                    <li><a href="https://whatsapp.com/channel/0029Vb79XEC9sBI5NLOEoN0a" target="_blank" style="color: var(--blue-primary);">WhatsApp Channel</a></li>
+                    <li><a href="https://t.me/boost/bluepayme" target="_blank" style="color: var(--blue-primary);">Telegram Group</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support -->
+    <section class="section" id="support">
+        <div class="container">
+            <div class="section-title">
+                <h2>Support</h2>
+                <p class="subtitle">Your success is our priority</p>
+            </div>
+            <div class="support-content">
+                <p>We’re committed to a seamless experience. Here’s what you need to know:</p>
+                <div class="alert-box">
+                    <strong>Important:</strong> Minimum withdrawal is <strong>₦10,000 per week</strong>. Bonus codes are valid for <strong>1 month</strong>. 
+                    If your withdrawal does not reflect within <strong>2 market days</strong>, you will be refunded. 
+                    Only <strong>official app vendors</strong> can assist you. We are online <strong>20/7 (Sunday–Saturday)</strong>.
+                </div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Customer support" class="section-image">
+        </div>
+    </section>
+
+    <!-- Online Services -->
+    <section class="section" id="online-services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Online Services</h2>
+                <p class="subtitle">Available 20 hours a day, 7 days a week</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Instant Bonus</h3>
+                    <p>₦50,000 credited immediately after signup.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-sync-alt"></i>
+                    <h3>Auto Payouts</h3>
+                    <p>Withdrawals processed within 2 market days.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-lock"></i>
+                    <h3>Secure Platform</h3>
+                    <p>End-to-end encryption and fraud protection.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
+    <!-- Withdraw -->
+    <section class="section" id="withdraw">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number">2M+</div>
-                    <div class="stat-label">Active Users</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">3+</div>
-                    <div class="stat-label">Years of Trust</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">22/7</div>
-                    <div class="stat-label">Support Availability</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">₦10K</div>
-                    <div class="stat-label">Min. Withdrawal</div>
-                </div>
+            <div class="section-title">
+                <h2>Withdraw Funds</h2>
+                <p class="subtitle">Fast, reliable, and transparent</p>
             </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>About BluePay Business</h2>
-                    <p>BluePay has been providing secure and reliable financial services for over 3 years, building a reputation for excellence and trustworthiness in the industry.</p>
-                    <p>We've successfully partnered with numerous companies to deliver seamless financial solutions to our growing community of users.</p>
-                    
-                    <ul class="about-list">
-                        <li><i class="fas fa-check-circle"></i> <strong>3+ Years of Operation:</strong> Established track record of success and reliability</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>2 Million Users:</strong> Trusted by a large and growing community</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>22/7 Support:</strong> Our team is available almost around the clock</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Partnership Excellence:</strong> Collaborated with major companies for seamless integration</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>No Scam Policy:</strong> 100% transparent and secure transactions</li>
-                    </ul>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="BluePay Team">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Withdrawal Section -->
-    <section class="withdrawal" id="withdrawal">
-        <div class="container">
-            <div class="withdrawal-content">
-                <h2>Secure Withdrawal Process</h2>
-                <div class="withdrawal-steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h3>Join Official Channel</h3>
-                            <p>Tap “Sign Up Now” and join our verified WhatsApp channel or Telegram group.</p>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h3>Complete Registration</h3>
-                            <p>Follow the instructions sent in the channel to verify your identity.</p>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h3>Claim Your Bonus</h3>
-                            <p>Receive ₦50,000 instantly and start earning through daily tasks and referrals.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="guarantee">
-                    <h3><i class="fas fa-lock"></i> 100% Scam-Free Guarantee</h3>
-                    <p>We guarantee secure, instant payouts with zero hidden fees.</p>
-                </div>
+            <div class="support-content">
+                <p>To withdraw:</p>
+                <ol style="padding-left: 20px; margin: 16px 0;">
+                    <li>Ensure your weekly earnings are at least <strong>₦10,000</strong></li>
+                    <li>Submit a withdrawal request via the app</li>
+                    <li>Wait for processing (completed within 2 market days)</li>
+                </ol>
+                <p class="alert-box" style="margin-top: 20px;">
+                    ❗ <strong>Note:</strong> Withdrawals below ₦10,000 will not be processed. Refunds are issued automatically if funds don’t arrive within 2 market days.
+                </p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
+    <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
+            <div class="footer-grid">
+                <div class="footer-col">
                     <h3>BluePay</h3>
-                    <p>Secure. Reliable. Trusted by millions.</p>
+                    <p>Trusted rewards platform for Nigerians. Fast, fair, and secure.</p>
                 </div>
-                <div class="footer-column">
+                <div class="footer-col">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#withdrawal">How It Works</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#online-services">Services</a></li>
+                        <li><a href="#withdraw">Withdraw</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h3>Contact</h3>
+                <div class="footer-col">
+                    <h3>Legal</h3>
                     <ul class="footer-links">
-                        <li>Email: <a href="mailto:bluepay863@gmail.com" style="color:#ddd;">bluepay863@gmail.com</a></li>
-                        <li>Phone: <a href="tel:+2348100258372" style="color:#ddd;">08100BLUEPAY</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Use</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                &copy; 2025 BluePay. All rights reserved.
+                &copy; 2024 BluePay. All rights reserved.
             </div>
         </div>
     </footer>
 
     <script>
         // Mobile Menu Toggle
-        document.getElementById('menuBtn').addEventListener('click', () => {
-            document.getElementById('mobileMenu').classList.add('active');
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const overlay = document.getElementById('overlay');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            overlay.classList.toggle('active');
         });
 
-        document.getElementById('closeMenu').addEventListener('click', () => {
-            document.getElementById('mobileMenu').classList.remove('active');
+        overlay.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            overlay.classList.remove('active');
         });
 
-        // Show modal ONLY on Sign Up button click
-        document.getElementById('signupBtn').addEventListener('click', (e) => {
-            e.preventDefault();
-            document.getElementById('joinModal').style.display = 'flex';
-        });
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                mobileMenu.classList.remove('open');
+                overlay.classList.remove('active');
 
-        // Close modal via "Close" text
-        document.querySelector('.close-modal').addEventListener('click', () => {
-            document.getElementById('joinModal').style.display = 'none';
-        });
-
-        // Optional: Close if user clicks outside modal content
-        document.getElementById('joinModal').addEventListener('click', (e) => {
-            if (e.target === document.getElementById('joinModal')) {
-                document.getElementById('joinModal').style.display = 'none';
-            }
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
     </script>
+
 </body>
 </html>
