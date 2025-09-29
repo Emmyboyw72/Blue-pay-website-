@@ -2,802 +2,859 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BluePay | Premium Financial Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>BluePay - Secure Financial Platform</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* Disable text selection */
-        body {
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            cursor: default;
+        :root {
+            --blue-primary: #1a73e8;
+            --blue-dark: #0d47a1;
+            --blue-light: #e8f0fe;
+            --white: #ffffff;
+            --text-gray: #2d2d2d;
+            --border-gray: #e0e6ed;
+            --bg-light: #fafbff;
+            --green-seen: #07bc0c;
+            --gray-light: #f5f7fa;
+            --gray-medium: #e4e7eb;
+            --success: #4caf50;
+            --warning: #ff9800;
+            --info: #2196f3;
         }
-        
+
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
-        
-        :root {
-            --primary-blue: #1a73e8;
-            --dark-blue: #0d47a1;
-            --light-blue: #e3f2fd;
-            --accent-green: #4caf50;
-            --accent-orange: #ff9800;
-            --white: #ffffff;
-            --light-gray: #f5f7fa;
-            --dark-gray: #333333;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
+
         body {
-            background-color: var(--light-gray);
-            color: var(--dark-gray);
+            background-color: var(--white);
+            color: var(--text-gray);
             line-height: 1.6;
+            touch-action: manipulation;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
         }
-        
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         /* Header Styles */
         header {
             background-color: var(--white);
-            box-shadow: var(--shadow);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 100;
         }
-        
-        .navbar {
+
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 0;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
             gap: 10px;
         }
-        
+
         .logo-icon {
-            background: var(--primary-blue);
-            color: var(--white);
+            background: linear-gradient(135deg, var(--blue-primary), var(--blue-dark));
             width: 40px;
             height: 40px;
-            border-radius: 50%;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: white;
             font-size: 20px;
             font-weight: bold;
         }
-        
+
         .logo-text {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--dark-blue);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--blue-primary);
         }
-        
-        .menu-toggle {
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-gray);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue-primary);
+        }
+
+        .mobile-menu-btn {
             display: none;
             background: none;
             border: none;
             font-size: 24px;
-            color: var(--primary-blue);
+            color: var(--blue-primary);
             cursor: pointer;
         }
-        
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark-gray);
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary-blue);
-        }
-        
-        .cta-button {
-            background-color: var(--primary-blue);
-            color: var(--white);
-            padding: 10px 25px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            box-shadow: 0 4px 8px rgba(26, 115, 232, 0.3);
-            display: inline-block;
-            text-align: center;
-        }
-        
-        .cta-button:hover {
-            background-color: var(--dark-blue);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(26, 115, 232, 0.4);
-        }
-        
+
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
-            color: var(--white);
+            background: linear-gradient(135deg, var(--blue-primary) 0%, var(--blue-dark) 100%);
+            color: white;
             padding: 80px 0;
             text-align: center;
         }
-        
+
         .hero-content {
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
         }
-        
+
         .hero h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 800;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
         }
-        
+
         .hero p {
-            font-size: 18px;
+            font-size: 1.2rem;
             margin-bottom: 30px;
             opacity: 0.9;
         }
-        
+
         .highlight {
-            background-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.2);
             padding: 3px 8px;
             border-radius: 4px;
-            font-weight: 700;
+            font-weight: 600;
         }
-        
+
+        .btn {
+            display: inline-block;
+            background: white;
+            color: var(--blue-primary);
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
+
         /* Features Section */
         .features {
             padding: 80px 0;
             background-color: var(--white);
         }
-        
+
         .section-title {
             text-align: center;
             margin-bottom: 50px;
         }
-        
+
         .section-title h2 {
-            font-size: 36px;
-            color: var(--dark-blue);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            color: var(--blue-primary);
             margin-bottom: 15px;
         }
-        
+
         .section-title p {
-            color: var(--dark-gray);
+            color: #666;
             max-width: 600px;
             margin: 0 auto;
         }
-        
+
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-        
+
         .feature-card {
             background: var(--white);
-            border-radius: 15px;
+            border-radius: 16px;
             padding: 30px;
-            box-shadow: var(--shadow);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
+            border: 1px solid var(--border-gray);
         }
-        
+
         .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
-        
+
         .feature-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--light-blue);
-            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            background: var(--blue-light);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
-            color: var(--primary-blue);
-            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--blue-primary);
+            font-size: 24px;
         }
-        
+
         .feature-card h3 {
-            font-size: 22px;
+            font-size: 1.5rem;
             margin-bottom: 15px;
-            color: var(--dark-blue);
+            color: var(--blue-primary);
         }
-        
+
+        .feature-card p {
+            color: #555;
+        }
+
         /* Stats Section */
         .stats {
             padding: 60px 0;
-            background: var(--light-blue);
+            background: var(--blue-light);
             text-align: center;
         }
-        
-        .stats-container {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 30px;
         }
-        
+
         .stat-item {
             padding: 20px;
         }
-        
+
         .stat-number {
-            font-size: 48px;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 800;
-            color: var(--primary-blue);
+            font-size: 2.5rem;
+            color: var(--blue-primary);
             margin-bottom: 10px;
         }
-        
-        .stat-text {
-            font-size: 18px;
-            color: var(--dark-blue);
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-gray);
         }
-        
-        /* How It Works */
-        .how-it-works {
+
+        /* About Section */
+        .about {
             padding: 80px 0;
             background-color: var(--white);
         }
-        
-        .steps {
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            color: var(--blue-primary);
+            margin-bottom: 25px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .about-list {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .about-list li {
             display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 40px;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            gap: 12px;
         }
-        
-        .step {
-            flex: 1;
-            min-width: 250px;
+
+        .about-list i {
+            color: var(--success);
+            font-size: 18px;
+            margin-top: 4px;
+        }
+
+        .about-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Withdrawal Section */
+        .withdrawal {
+            padding: 80px 0;
+            background: var(--gray-light);
+        }
+
+        .withdrawal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .withdrawal h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.2rem;
+            color: var(--blue-primary);
             text-align: center;
-            padding: 20px;
+            margin-bottom: 30px;
         }
-        
+
+        .withdrawal-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .step {
+            display: flex;
+            gap: 20px;
+        }
+
         .step-number {
-            width: 50px;
-            height: 50px;
-            background: var(--primary-blue);
-            color: var(--white);
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background: var(--blue-primary);
+            color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 20px;
             font-weight: bold;
+            font-size: 1.2rem;
         }
-        
-        .step h3 {
-            margin-bottom: 15px;
-            color: var(--dark-blue);
+
+        .step-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--blue-primary);
         }
-        
-        /* Mobile Menu */
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-            
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                background: var(--white);
-                width: 100%;
-                flex-direction: column;
-                align-items: center;
-                padding: 20px 0;
-                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-                transform: translateY(-150%);
-                transition: transform 0.3s ease-in-out;
-            }
-            
-            .nav-links.active {
-                transform: translateY(0);
-            }
-            
-            .hero h1 {
-                font-size: 32px;
-            }
-            
-            .steps {
-                flex-direction: column;
-            }
+
+        .step-content p {
+            color: #555;
         }
-        
+
+        .guarantee {
+            background: rgba(76, 175, 80, 0.1);
+            border-left: 4px solid var(--success);
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .guarantee h3 {
+            color: var(--success);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
         /* Footer */
         footer {
-            background: var(--dark-blue);
-            color: var(--white);
-            padding: 40px 0 20px;
+            background: var(--blue-dark);
+            color: white;
+            padding: 50px 0 20px;
         }
-        
+
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
-        
+
         .footer-column h3 {
+            font-size: 1.4rem;
             margin-bottom: 20px;
-            font-size: 20px;
+            position: relative;
+            padding-bottom: 10px;
         }
-        
-        .footer-column ul {
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--blue-primary);
+        }
+
+        .footer-links {
             list-style: none;
         }
-        
-        .footer-column ul li {
-            margin-bottom: 10px;
+
+        .footer-links li {
+            margin-bottom: 12px;
         }
-        
-        .footer-column ul li a {
-            color: #b0c4de;
+
+        .footer-links a {
+            color: #ddd;
             text-decoration: none;
             transition: color 0.3s;
         }
-        
-        .footer-column ul li a:hover {
-            color: var(--white);
+
+        .footer-links a:hover {
+            color: white;
         }
-        
+
         .copyright {
             text-align: center;
             padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #b0c4de;
-            font-size: 14px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
         }
-        
-        /* Trust Badges */
-        .trust-badges {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .badge {
-            background: var(--white);
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: 600;
-            color: var(--dark-blue);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Guarantee Banner */
-        .guarantee {
-            background: var(--accent-green);
-            color: var(--white);
-            text-align: center;
-            padding: 15px;
-            font-weight: 600;
-            margin: 40px 0;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Custom Alert Styles */
-        .custom-alert {
+
+        /* Mobile Menu */
+        .mobile-menu {
             position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: var(--white);
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            padding: 30px;
-            text-align: center;
+            top: 0;
+            right: -300px;
+            width: 280px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            padding: 20px;
+            transition: right 0.3s;
             z-index: 1000;
-            max-width: 400px;
-            width: 90%;
-            border-top: 4px solid var(--primary-blue);
         }
-        
-        .alert-icon {
-            font-size: 48px;
-            color: var(--primary-blue);
-            margin-bottom: 15px;
+
+        .mobile-menu.active {
+            right: 0;
         }
-        
-        .alert-title {
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--dark-blue);
-            margin-bottom: 10px;
-        }
-        
-        .alert-message {
-            margin-bottom: 20px;
-            color: var(--dark-gray);
-        }
-        
-        .alert-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-        }
-        
-        .alert-btn {
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
+
+        .close-menu {
+            background: none;
             border: none;
-            min-width: 100px;
+            font-size: 24px;
+            color: var(--blue-primary);
+            float: right;
+            cursor: pointer;
         }
-        
-        .whatsapp-btn {
-            background: #25D366;
-            color: white;
+
+        .mobile-nav-links {
+            margin-top: 50px;
         }
-        
-        .telegram-btn {
-            background: #0088cc;
-            color: white;
+
+        .mobile-nav-links a {
+            display: block;
+            padding: 15px 0;
+            text-decoration: none;
+            color: var(--text-gray);
+            font-weight: 600;
+            border-bottom: 1px solid var(--border-gray);
         }
-        
-        .alert-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        
-        .overlay {
+
+        /* Beautiful Alert Modal */
+        .modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 999;
-            display: none;
+            background: rgba(0,0,0,0.6);
+            display: none; /* Hidden by default */
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .modal {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .modal h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--blue-primary);
+            margin-bottom: 20px;
+        }
+
+        .modal p {
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .modal-btn {
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            color: white;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .modal-btn.whatsapp {
+            background: #25D366;
+        }
+
+        .modal-btn.telegram {
+            background: #0088cc;
+        }
+
+        .modal-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .close-modal {
+            margin-top: 20px;
+            color: #888;
+            font-size: 0.9rem;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .hero {
+                padding: 60px 0;
+            }
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            .feature-card {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .btn {
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+            .step {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .step-number {
+                align-self: flex-start;
+            }
+            .modal-buttons {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Alert Overlay -->
-    <div class="overlay" id="alertOverlay"></div>
-    
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo">
-                    <div class="logo-icon">BP</div>
-                    <div class="logo-text">BluePay</div>
-                </div>
-                <button class="menu-toggle" id="menuToggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="nav-links" id="navLinks">
-                    <a href="#about">About</a>
-                    <a href="#how-it-works">How It Works</a>
-                    <a href="#withdrawal">Withdrawal</a>
-                    <a href="#stats">Stats</a>
-                    <a href="#" class="cta-button" id="signupBtn">Sign Up Now</a>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Welcome to BluePay Financial Platform</h1>
-                <p>Get <span class="highlight">₦50,000</span> instantly on your first sign-up! Join our premium community with secure withdrawals and daily rewards.</p>
-                <a href="#" class="cta-button" id="heroBtn">Get Started Today</a>
+    <!-- Beautiful Alert Modal (Hidden by default) -->
+    <div class="modal-overlay" id="joinModal">
+        <div class="modal">
+            <h2>Join BluePay Community</h2>
+            <p>To get your ₦50,000 welcome bonus, please join us on WhatsApp or Telegram:</p>
+            <div class="modal-buttons">
+                <a href="https://whatsapp.com/channel/0029Vb79XEC9sBI5NLOEoN0a" target="_blank" class="modal-btn whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Channel
+                </a>
+                                <a href="https://t.me/boost/bluepayme" target="_blank" class="modal-btn telegram">
+                    <i class="fab fa-telegram"></i> Telegram Group
+                </a>
             </div>
-        </div>
-    </section>
-
-    <!-- Guarantee Banner -->
-    <div class="container">
-        <div class="guarantee">
-            <i class="fas fa-shield-alt"></i> 100% SCAM-FREE GUARANTEE: If your withdrawal isn't processed within 2 market days, you'll receive a full refund!
+            <div class="close-modal" onclick="document.getElementById('joinModal').style.display='none'">
+                Close and continue browsing
+            </div>
         </div>
     </div>
 
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">B</div>
+                <div class="logo-text">BluePay</div>
+            </div>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#features">Features</a>
+                <a href="#withdrawal">Withdrawal</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button class="mobile-menu-btn" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+            <a href="#withdrawal">Withdrawal</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Start Earning with BluePay Today</h1>
+            <p>Sign up now and receive <span class="highlight">₦50,000</span> instantly! Join our community of <span class="highlight">2 million users</span> and experience secure, reliable financial services.</p>
+            <a href="#" class="btn" id="signupBtn">Sign Up Now</a>
+        </div>
+    </section>
+
     <!-- Features Section -->
-    <section class="features" id="about">
+    <section class="features" id="features">
         <div class="container">
             <div class="section-title">
-                <h2>About BluePay</h2>
-                <p>Trusted by over 2 million users worldwide with a proven track record of excellence</p>
+                <h2>Why Choose BluePay?</h2>
+                <p>Our platform offers unique benefits designed to maximize your earnings and ensure security</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-gift"></i>
                     </div>
-                    <h3>3 Years of Excellence</h3>
-                    <p>Operating since 2020 with consistent growth and satisfied customers. Our platform has maintained a 99.8% satisfaction rate.</p>
+                    <h3>₦50,000 Welcome Bonus</h3>
+                    <p>Get ₦50,000 instantly when you sign up and verify your account. No hidden terms or conditions.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-handshake"></i>
+                        <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3>Trusted Partnerships</h3>
-                    <p>We've collaborated with leading financial institutions and tech companies to provide seamless, secure services.</p>
+                    <h3>Secure Withdrawals</h3>
+                    <p>Withdraw funds with confidence through our AI-powered system or vendor-assisted process. No scams, guaranteed.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-business-time"></i>
+                        <i class="fas fa-trophy"></i>
                     </div>
-                    <h3>22/7 Operations</h3>
-                    <p>Our platform operates 22 hours a day, 7 days a week to serve you whenever you need us. Closed only 2 hours daily for maintenance.</p>
+                    <h3>Daily Login Rewards</h3>
+                    <p>Log in daily for 2 weeks straight and win ₦2,000! Consistency pays off with BluePay.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Stats Section -->
-    <section class="stats" id="stats">
+    <section class="stats">
         <div class="container">
-            <div class="stats-container">
+            <div class="stats-grid">
                 <div class="stat-item">
                     <div class="stat-number">2M+</div>
-                    <div class="stat-text">Active Users</div>
+                    <div class="stat-label">Active Users</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">3</div>
-                    <div class="stat-text">Years of Operation</div>
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">Years of Trust</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">₦50K</div>
-                    <div class="stat-text">Welcome Bonus</div>
+                    <div class="stat-number">22/7</div>
+                    <div class="stat-label">Support Availability</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">99.8%</div>
-                    <div class="stat-text">Success Rate</div>
+                    <div class="stat-number">₦10K</div>
+                    <div class="stat-label">Min. Withdrawal</div>
                 </div>
-            </div>
-            <div class="trust-badges">
-                <div class="badge"><i class="fas fa-lock"></i> Secure Transactions</div>
-                <div class="badge"><i class="fas fa-medal"></i> Trusted Platform</div>
-                <div class="badge"><i class="fas fa-headset"></i> 24/7 Support</div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works -->
-    <section class="how-it-works" id="how-it-works">
+    <!-- About Section -->
+    <section class="about" id="about">
         <div class="container">
-            <div class="section-title">
-                <h2>How BluePay Works</h2>
-                <p>Simple, secure, and rewarding financial experience</p>
-            </div>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Sign Up</h3>
-                    <p>Create your account in under 2 minutes and instantly receive your ₦50,000 welcome bonus.</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About BluePay Business</h2>
+                    <p>BluePay has been providing secure and reliable financial services for over 3 years, building a reputation for excellence and trustworthiness in the industry.</p>
+                    <p>We've successfully partnered with numerous companies to deliver seamless financial solutions to our growing community of users.</p>
+                    
+                    <ul class="about-list">
+                        <li><i class="fas fa-check-circle"></i> <strong>3+ Years of Operation:</strong> Established track record of success and reliability</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>2 Million Users:</strong> Trusted by a large and growing community</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>22/7 Support:</strong> Our team is available almost around the clock</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Partnership Excellence:</strong> Collaborated with major companies for seamless integration</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>No Scam Policy:</strong> 100% transparent and secure transactions</li>
+                    </ul>
                 </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Earn Daily</h3>
-                    <p>Log in daily for 2 weeks straight to earn a chance to win ₦2,000 bonus each day!</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Withdraw Securely</h3>
-                    <p>Request withdrawals of minimum ₦10,000 weekly using your premium access code.</p>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="BluePay Team">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Withdrawal Section -->
-    <section class="features" id="withdrawal" style="background-color: var(--light-blue);">
+    <section class="withdrawal" id="withdrawal">
         <div class="container">
-            <div class="section-title">
-                <h2>Premium Withdrawal System</h2>
-                <p>Secure, reliable, and transparent withdrawal process</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-key"></i>
+            <div class="withdrawal-content">
+                <h2>Secure Withdrawal Process</h2>
+                <div class="withdrawal-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Join Official Channel</h3>
+                            <p>Tap “Sign Up Now” and join our verified WhatsApp channel or Telegram group.</p>
+                        </div>
                     </div>
-                    <h3>Premium Access Code</h3>
-                    <p>Get your unique access code through our AI system or directly from our verified vendors in the app.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-wallet"></i>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Complete Registration</h3>
+                            <p>Follow the instructions sent in the channel to verify your identity.</p>
+                        </div>
                     </div>
-                    <h3>Weekly Withdrawals</h3>
-                    <p>Withdraw a minimum of ₦10,000 every week. Your access code remains valid for 10 months.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Claim Your Bonus</h3>
+                            <p>Receive ₦50,000 instantly and start earning through daily tasks and referrals.</p>
+                        </div>
                     </div>
-                    <h3>Money-Back Guarantee</h3>
-                    <p>If your withdrawal isn't processed within 2 market days, you'll receive a full refund immediately.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="hero" style="padding: 60px 0;">
-        <div class="container">
-            <div class="hero-content">
-                <h2>Join 2 Million+ Satisfied Users</h2>
-                <p>Get your ₦50,000 welcome bonus and start earning today!</p>
-                                <a href="#" class="cta-button" id="ctaBtn">Create Free Account</a>
+                <div class="guarantee">
+                    <h3><i class="fas fa-lock"></i> 100% Scam-Free Guarantee</h3>
+                    <p>We guarantee secure, instant payouts with zero hidden fees.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer id="contact">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>BluePay</h3>
-                    <p>Providing secure and reliable financial services since 2020. Trusted by millions worldwide.</p>
+                    <p>Secure. Reliable. Trusted by millions.</p>
                 </div>
                 <div class="footer-column">
                     <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#how-it-works">How It Works</a></li>
-                        <li><a href="#withdrawal">Withdrawal Process</a></li>
-                        <li><a href="#">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Support</h3>
-                    <ul>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Security</a></li>
-                        <li><a href="#">Terms of Service</a></li>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#withdrawal">How It Works</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Contact</h3>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> support@bluepay.com</li>
-                        <li><i class="fas fa-phone"></i> +234 800 123 4567</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Lagos, Nigeria</li>
+                    <ul class="footer-links">
+                        <li>Email: <a href="mailto:bluepay863@gmail.com" style="color:#ddd;">bluepay863@gmail.com</a></li>
+                        <li>Phone: <a href="tel:+2348100258372" style="color:#ddd;">08100BLUEPAY</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                &copy; 2023 BluePay Financial Services. All rights reserved.
+                &copy; 2025 BluePay. All rights reserved.
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-        
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+        // Mobile Menu Toggle
+        document.getElementById('menuBtn').addEventListener('click', () => {
+            document.getElementById('mobileMenu').classList.add('active');
         });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                if (this.getAttribute('href') !== '#') {
-                    e.preventDefault();
-                    navLinks.classList.remove('active');
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
+
+        document.getElementById('closeMenu').addEventListener('click', () => {
+            document.getElementById('mobileMenu').classList.remove('active');
         });
-        
-        // Show beautiful alert for sign-up buttons
-        function showCustomAlert() {
-            const overlay = document.getElementById('alertOverlay');
-            overlay.style.display = 'block';
-            
-            const alertHTML = `
-                <div class="custom-alert">
-                    <div class="alert-icon">
-                        <i class="fas fa-info-circle"></i>
-                    </div>
-                    <div class="alert-title">Join BluePay Community</div>
-                    <div class="alert-message">To get started with your ₦50,000 welcome bonus, please join us through one of our official channels:</div>
-                    <div class="alert-buttons">
-                        <button class="alert-btn whatsapp-btn" onclick="redirectToWhatsApp()">
-                            <i class="fab fa-whatsapp"></i> WhatsApp
-                        </button>
-                        <button class="alert-btn telegram-btn" onclick="redirectToTelegram()">
-                            <i class="fab fa-telegram"></i> Telegram
-                        </button>
-                    </div>
-                </div>
-            `;
-            
-            overlay.innerHTML = alertHTML;
-            
-            // Close alert when clicking outside
-            overlay.addEventListener('click', (e) => {
-                if (e.target === overlay) {
-                    overlay.style.display = 'none';
-                }
-            });
-        }
-        
-        function redirectToWhatsApp() {
-            window.location.href = 'https://whatsapp.com/channel/0029Vb79XEC9sBI5NLOEoN0a';
-        }
-        
-        function redirectToTelegram() {
-            window.location.href = 'https://t.me/boost/bluepayme';
-        }
-        
-        // Attach event listeners to all sign-up buttons
-        document.querySelectorAll('.cta-button').forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                showCustomAlert();
-            });
+
+        // Show modal ONLY on Sign Up button click
+        document.getElementById('signupBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('joinModal').style.display = 'flex';
         });
-        
-        // Add active class to current section in navigation
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            
-            let currentSection = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if (pageYOffset >= (sectionTop - 100)) {
-                    currentSection = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${currentSection}`) {
-                    link.classList.add('active');
-                }
-            });
+
+        // Close modal via "Close" text
+        document.querySelector('.close-modal').addEventListener('click', () => {
+            document.getElementById('joinModal').style.display = 'none';
+        });
+
+        // Optional: Close if user clicks outside modal content
+        document.getElementById('joinModal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('joinModal')) {
+                document.getElementById('joinModal').style.display = 'none';
+            }
         });
     </script>
 </body>
